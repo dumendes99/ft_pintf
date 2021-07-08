@@ -16,7 +16,7 @@ REMOVE = rm -rf
 all: $(NAME)
 
 $(NAME): $(OBJ) 
-	ar -rcs $(NAME) $(ONJ)
+	ar -r $(NAME) $(ONJ)
 
 $(OBJ): $(SRC)
 	$(CC) $(CFLAGS) -c $(SRC)
