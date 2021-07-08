@@ -8,14 +8,9 @@ SRC =	ft_print_base.c \
 		ft_print_type.c \
 		ft_printf_utils_num.c \
 		ft_printf_utils.c \
-		ft_printf.c \
+		ft_printf.c 
 
-# OBJ_PATH = ./objects
-OBJ =	$(subst .c,.o,$(SRC))
-
-# INCLUDE_PATH = ./includes
-# HEADER_FILE = ft_printf.h
-# INCLUDE = $(addprefix $(INCLUDE_PATH)/,$(HEADER_FILE))
+OBJ =	$(SRC:.c=.o)
 
 REMOVE = rm -rf 
 
