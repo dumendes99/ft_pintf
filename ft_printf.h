@@ -6,6 +6,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 
+int		ft_printf(char *str, ...);
+void	ft_parse_args(char *str, int i, va_list args);
 int		ft_strlen(char *str);
 void	ft_putchar_fd(char c, int fd);
 char	*ft_itoa(int num);
