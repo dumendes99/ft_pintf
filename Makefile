@@ -1,8 +1,7 @@
 NAME = libftprintf.a
 
 CFLAGS = -Wall -Werror -Wextra 
-CC = clang 
-CREATE_LIB = ar -rcs
+CC = clang
 
 SRC =	ft_print_base.c \
 		ft_print_type.c \
@@ -17,7 +16,7 @@ REMOVE = rm -rf
 all: $(NAME)
 
 $(NAME): $(OBJ) 
-	$(CREATE_LIB) $(NAME) $(ONJ)
+	ar -rcs $(NAME) $(ONJ)
 
 $(OBJ): $(SRC)
 	$(CC) $(CFLAGS) -c $(SRC)
