@@ -18,20 +18,24 @@ void	ft_parse_args(char *str, int i, va_list args)
 
 int	ft_printf(char *str, ...)
 {
-	int		i;
+	int		count;
+	int		flags
 	va_list	args;
 
-	i = 0;
+	count = 0;
+	flags = 0;
 	va_start(args, str);
-	while (i < ft_strlen(str))
+	if (!(str) && !(args))
+		return (-1);
+	while (count < ft_strlen(str))
 	{
-		if (str[i] == '%')
+		if (str[count] == '%')
 		{
-			ft_parse_args(str, i, args);
-			i++;
+			ft_parse_args(str, &count, args);
+			count++;
 		}
 		else
-			ft_putchar_fd(str[i], 1);
+			ft_putchar_fd(str[count], 1);
 		i++;
 	}
 	va_end(args);

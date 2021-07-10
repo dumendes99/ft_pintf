@@ -6,6 +6,16 @@
 # include <stdio.h>
 # include <stdlib.h>
 
+typedef	struct s_flags
+{
+	int	sign; 
+	int	zero; 
+	int	width;
+	int prec;
+	int	flags;
+}	t_flags;
+
+
 int		ft_printf(char *str, ...);
 void	ft_parse_args(char *str, int i, va_list args);
 int		ft_strlen(char *str);
