@@ -19,7 +19,7 @@ void	ft_parse_args(char *str, int i, va_list args)
 int	ft_printf(char *str, ...)
 {
 	int		count;
-	int		flags
+	// int		flags
 	va_list	args;
 
 	count = 0;
