@@ -1,42 +1,39 @@
 #include "ft_printf.h"
 
-void	ft_parse_args(char *str, *int count, va_list args)
+void	ft_parse_args(char *str, int *count, va_list args)
 {
-	if ((str[count + 1] == 'd') || (str[count + 1] == 'count'))
+	if ((str[*count] == 'd') || (str[*count] == 'i'))
 		ft_print_num(args);
-	else if (str[count + 1] == 'c')
+	else if (str[*count] == 'c')
 		ft_print_char(args);
-	else if (str[count + 1] == 's')
+	else if (str[*count] == 's')
 		ft_print_str(args);
-	else if (str[count + 1] == 'u')
+	else if (str[*count] == 'u')
 		ft_print_unsig(args);
-	else if (str[count + 1] == 'p')
+	else if (str[*count] == 'p')
 		ft_print_pointer(args);
-	else if ((str[count + 1] == 'x') || (str[i + 1] == 'X'))
-		ft_print_hex(str, i, args);
+	else if ((str[*count] == 'x') || (str[*count] == 'X'))
+		ft_print_hex(str, *count, args);
 }
 
 int	ft_printf(char *str, ...)
 {
 	int		count;
-	// int		flags
 	va_list	args;
 
 	count = 0;
-	// flags = 0;
 	va_start(args, str);
-	if (!(str) && !(args))
-		return (-1);
 	while (count < ft_strlen(str))
 	{
 		if (str[count] == '%')
 		{
-			ft_parse_args(str, &count, args);
+			count++;
+			ft_parse_args(str,  &count, args);
 			count++;
 		}
 		else
 			ft_putchar_fd(str[count], 1);
-		i++;
+		count++;
 	}
 	va_end(args);
 	return (0);

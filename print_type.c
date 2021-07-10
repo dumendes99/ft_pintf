@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void	ft_print_hex(char *str, int i, va_list args)
+void	ft_print_hex(char *str, int count, va_list args)
 {
 	unsigned int num;
 	char *lowerbase;
@@ -9,7 +9,7 @@ void	ft_print_hex(char *str, int i, va_list args)
 	lowerbase = "0123456789abcdef";
 	upperbase = "0123456789ABCDEF";
 	num = va_arg(args, unsigned int);
-	if (str[i + 1] == 'x')
+	if (str[count + 1] == 'x')
 		ft_putnbr_hex(lowerbase, num);
 	else
 		ft_putnbr_hex(upperbase, num);
@@ -19,7 +19,7 @@ void	ft_print_hex(char *str, int i, va_list args)
 void	ft_print_pointer(va_list args)
 {
 	unsigned long long int	num;
-	char *lowerbase;
+	char					*lowerbase;
 	lowerbase = "0123456789abcdef";
 
 	num = va_arg(args, unsigned long long int);
