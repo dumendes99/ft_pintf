@@ -2,10 +2,11 @@
 
 int main(void)
 {
-	int n = -1;
+	int n = -113;
 	int hex = 15643;
 	char c = 'e';
 	char *str = "eduardo";
+
 	ft_printf("%d meu \n", n);
 	printf("%d std \n", n);
 
@@ -29,5 +30,4 @@ int main(void)
 
 	ft_printf("%X meu \n", hex);
 	printf("%X std \n", hex);
-
 }

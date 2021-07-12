@@ -16,20 +16,10 @@ int	ft_check_unsig(unsigned int num)
 int	ft_checklen(int num)
 {
 	int				i;
-	unsigned int	n;
 
-	i = 1;
-	if (num < 0)
-	{
-		num *= -1;
-		i++;
-	}
-	n = num;
-	while (n > 1)
-	{
-		n = n / 10;
-		i++;
-	}
+	i = 0;
+	while (num && ++i)
+		num = num / 10;
 	return (i);
 }
 

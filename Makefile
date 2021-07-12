@@ -3,10 +3,11 @@ NAME = libftprintf.a
 CFLAGS = -Wall -Werror -Wextra 
 CC = clang
 
-SRC =	print_base.c \
-		print_type.c \
-		printf_utils_num.c \
-		printf_utils.c \
+SRC =	./src/print_base.c \
+		./src/print_type.c \
+		./src/printf_utils_num.c \
+		./src/printf_utils.c \
+		./src/init_struct.c \
 		ft_printf.c 
 
 OBJ =	$(SRC:.c=.o)
@@ -18,8 +19,8 @@ all: $(NAME)
 $(NAME): $(OBJ) 
 	ar -r $(NAME) $(ONJ)
 
-$(OBJ): $(SRC)
-	$(CC) $(CFLAGS) -c $(SRC)
+.c.o:
+	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 clean:
 	$(REMOVE) $(OBJ)
