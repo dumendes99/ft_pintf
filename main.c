@@ -21,7 +21,7 @@ int main(void)
 
 	ft_printf("%u meu \n", n);
 	printf("%u std \n", n);
-	
+
 	ft_printf("%p meu \n", &n);
 	printf("%p std \n", &n);
 

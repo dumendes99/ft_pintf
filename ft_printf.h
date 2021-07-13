@@ -8,11 +8,13 @@
 
 typedef struct s_flags
 {
-	int	sign;
+	int	minus;
 	int	zero;
 	int	width;
-	int	prec;
+	int	dot;
 	int	index;
+	int plus;
+
 	size_t size;
 }	t_flags;
 
