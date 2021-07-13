@@ -41,26 +41,32 @@ void	ft_print_unsig(va_list args, t_flags *s_flags)
 {
 	unsigned int	num;
 	char			*str_num;
+	int				i;
 
+	i = 0;
 	num = va_arg(args, unsigned int);
 	str_num = ft_utoa(num);
-	while (*str_num)
+	while (str_num[i])
 	{
-		ft_putchar_fd(*str_num, 1, s_flags);
-		str_num++;
+		ft_putchar_fd(str_num[i], 1, s_flags);
+		i++;
 	}
+	free(str_num);
 }
 
 void	ft_print_num(va_list args, t_flags *s_flags)
 {
 	int		num;
 	char	*str_num;
+	int		i;
 
+	i = 0;
 	num = va_arg(args, int);
 	str_num = ft_itoa(num);
-	while (*str_num)
+	while (str_num[i])
 	{
-		ft_putchar_fd(*str_num, 1, s_flags);
-		str_num++;
+		ft_putchar_fd(str_num[i], 1, s_flags);
+		i++;
 	}
+	free(str_num);
 }

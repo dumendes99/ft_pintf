@@ -12,7 +12,7 @@ int main(void)
 
 	ft_printf("%c meu \n", c);
 	printf("%c std \n", c);
-	
+ 
 	ft_printf("%s meu \n", str);
 	printf("%s std \n", str);
 

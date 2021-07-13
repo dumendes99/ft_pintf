@@ -29,7 +29,8 @@ char	*ft_utoa(unsigned int num)
 	int		len;
 
 	len = ft_check_unsig(num);
-	str = (char *)malloc(sizeof(char) * len);
+	str = (char *)malloc(sizeof(char) * len + 1);
+	str[len] = '\0';
 	while (len--)
 	{
 		str[len] = (num % 10) + '0';
@@ -47,7 +48,7 @@ char	*ft_itoa(int num)
 
 	neg = 0;
 	len = ft_checklen(num);
-	str = (char *)malloc(sizeof(char) * len);
+	str = (char *)malloc(sizeof(char) * len + 1);
 	if (num < 0)
 	{
 		neg = 1;
@@ -55,6 +56,7 @@ char	*ft_itoa(int num)
 		n = num;
 	}
 	n = num;
+	str[len] = '\0';
 	while (len--)
 	{
 		str[len] = (n % 10) + '0';
