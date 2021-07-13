@@ -30,4 +30,5 @@ int main(void)
 
 	ft_printf("%X meu \n", hex);
 	printf("%X std \n", hex);
+
 }
