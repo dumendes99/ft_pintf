@@ -5,7 +5,7 @@ int	ft_atoi(char *str, t_flags *s_flags)
 	int	res;
 
 	res = 0;
-	while ((str[s_flags->index] >= '1') && (str[s_flags->index] <= '9'))
+	while ((str[s_flags->index] >= '0') && (str[s_flags->index] <= '9'))
 	{
 		res = (res * 10) + str[s_flags->index] - '0';
 		s_flags->index++;

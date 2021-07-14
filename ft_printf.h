@@ -14,12 +14,13 @@ typedef struct s_flags
 	int	dot;
 	int	index;
 	int plus;
+	int	space;
 	int	size;
 }	t_flags;
 
 int		ft_printf(const char *str, ...);
 void	ft_check_sign(char *str, t_flags *s_flags);
-void	ft_check_width(char *str, t_flags *s_flags);
+void	ft_check_width(char *str, t_flags *s_flags, va_list args);
 void	ft_parse_args(char *str, t_flags *s_flags, va_list args);
 int		ft_strlen(char *str);
 void	ft_putchar_fd(char c, int fd, t_flags *s_flags);

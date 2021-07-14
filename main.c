@@ -10,8 +10,8 @@ int main(void)
 	// ft_printf("qualquer coisa -meu\n");
 	// printf("qualquer coisa -std\n");
 
-	ft_printf("%-09d meu \n", n);
-	printf("%-09d std \n", n);
+	ft_printf("%10d meu \n", n);
+	printf("%10d std \n" , n);
 
 	// ft_printf("%c meu \n", c);
 	// printf("%c std \n", c);
