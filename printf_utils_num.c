@@ -1,5 +1,18 @@
 #include "ft_printf.h"
 
+int	ft_atoi(char *str, t_flags *s_flags)
+{
+	int	res;
+
+	res = 0;
+	while ((str[s_flags->index] >= '1') && (str[s_flags->index] <= '9'))
+	{
+		res = (res * 10) + str[s_flags->index] - '0';
+		s_flags->index++;
+	}
+	return (res);
+}
+
 int	ft_check_unsig(unsigned int num)
 {
 	int	i;
@@ -43,15 +56,12 @@ char	*ft_itoa(int num)
 {
 	char			*str;
 	int				len;
-	int				neg;
 	unsigned int	n;
 
-	neg = 0;
 	len = ft_checklen(num);
 	str = (char *)malloc(sizeof(char) * len + 1);
 	if (num < 0)
 	{
-		neg = 1;
 		num *= -1;
 		n = num;
 	}
@@ -61,10 +71,6 @@ char	*ft_itoa(int num)
 	{
 		str[len] = (n % 10) + '0';
 		n = n / 10;
-	}
-	if (neg == 1)
-	{
-		str[0] = '-';
 	}
 	return (str);
 }

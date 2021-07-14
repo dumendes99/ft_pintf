@@ -14,11 +14,12 @@ typedef struct s_flags
 	int	dot;
 	int	index;
 	int plus;
-
-	size_t size;
+	int	size;
 }	t_flags;
 
 int		ft_printf(const char *str, ...);
+void	ft_check_sign(char *str, t_flags *s_flags);
+void	ft_check_width(char *str, t_flags *s_flags);
 void	ft_parse_args(char *str, t_flags *s_flags, va_list args);
 int		ft_strlen(char *str);
 void	ft_putchar_fd(char c, int fd, t_flags *s_flags);
@@ -33,6 +34,8 @@ void	ft_print_hex(char *str, t_flags *s_flags, va_list args);
 char	*ft_utoa(unsigned int num);
 int		ft_check_unsig(unsigned int num);
 void	ft_putnbr_hex(char *base, unsigned long long int num, t_flags *s_flags);
+void	print_width(int *rest_size, t_flags *s_flags);
 void	init_struct(t_flags *s_flags);
+int		ft_atoi(char *str, t_flags *s_flags);
 
 #endif
