@@ -7,7 +7,7 @@ int	ft_atoi(char *str, t_flags *s_flags)
 	res = 0;
 	while ((str[s_flags->index] >= '0') && (str[s_flags->index] <= '9'))
 	{
-		res = (res * 10) + str[s_flags->index] - '0';
+		res = (res * 10) + (str[s_flags->index] - '0');
 		s_flags->index++;
 	}
 	return (res);
@@ -57,13 +57,16 @@ char	*ft_itoa(int num)
 	char			*str;
 	int				len;
 	unsigned int	n;
+	int				neg;
 
 	len = ft_checklen(num);
 	str = (char *)malloc(sizeof(char) * len + 1);
+	neg = 0;
 	if (num < 0)
 	{
 		num *= -1;
 		n = num;
+		neg = 1;
 	}
 	n = num;
 	str[len] = '\0';
@@ -72,5 +75,7 @@ char	*ft_itoa(int num)
 		str[len] = (n % 10) + '0';
 		n = n / 10;
 	}
+	if (neg)
+		str[0] = '-';
 	return (str);
 }

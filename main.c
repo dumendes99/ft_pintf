@@ -7,34 +7,40 @@ int main(void)
 	char c = 'e';
 	char *str = "eduardo";
 
-	// ft_printf("qualquer coisa -meu\n");
-	// printf("qualquer coisa -std\n");
+	printf(" %d\n", ft_printf("qualquer coisa -meu "));
+	printf(" %d\n", printf("qualquer coisa -std "));
 
-	ft_printf("%10d meu \n", n);
-	printf("%10d std \n" , n);
+	printf(" %d\n", ft_printf("%-010d| meu ", n));
+	printf(" %d\n", printf("%-010d| std " , n));
 
-	// ft_printf("%c meu \n", c);
-	// printf("%c std \n", c);
+	printf(" %d\n", ft_printf("%010d| meu ", n));
+	printf(" %d\n", printf("%010d| std " , n));
+
+	printf(" %d\n", ft_printf("%10d| meu ", n));
+	printf(" %d\n", printf("%10d| std " , n));
+
+	printf(" %d\n", ft_printf("%c| meu ", c));
+	printf(" %d\n", printf("%c| std ", c));
+
+	printf(" %d\n", ft_printf("%s| meu ", str));
+	printf(" %d\n", printf("%s| std ", str));
+
+	printf(" %d\n", ft_printf("%015i| meu ", n));
+	printf(" %d\n", printf("%015i| std ", n));
+
+	printf(" %d\n", ft_printf("%015u| meu ", n));
+	printf(" %d\n", printf("%015u| std ", n));
+
+	printf(" %d\n", ft_printf("%015p| meu ", &n));
+	printf(" %d\n", printf("%015p| std ", &n));
+
+	printf(" %d\n", ft_printf("%015x| meu ", hex));
+	printf(" %d\n", printf("%015x| std ", hex));
  
-	// ft_printf("%s meu \n", str);
-	// printf("%s std \n", str);
+	printf(" %d\n", ft_printf("%015X| meu ", hex));
+	printf(" %d\n", printf("%015X| std ", hex));
 
-	// ft_printf("%i meu \n", n);
-	// printf("%i std \n", n);
-
-	// ft_printf("%u meu \n", n);
-	// printf("%u std \n", n);
-
-	// ft_printf("%p meu \n", &n);
-	// printf("%p std \n", &n);
-
-	// ft_printf("%x meu \n", hex);
-	// printf("%x std \n", hex);
-
-	// ft_printf("%X meu \n", hex);
-	// printf("%X std \n", hex);
-
-	// ft_printf("%% meu \n");
-	// printf("%% std \n");
+	printf(" %d\n", ft_printf("%%| meu "));
+	printf(" %d\n", printf("%%| std "));
 
 }

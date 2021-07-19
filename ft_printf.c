@@ -7,7 +7,7 @@ int	ft_printf(const char *str, ...)
 
 	init_struct(&s_flags);
 	va_start(args, str);
-	while (str[s_flags.index])
+	while (str[s_flags.index] != '\0')
 	{
 		if (str[s_flags.index] == '%')
 		{
@@ -19,7 +19,7 @@ int	ft_printf(const char *str, ...)
 		}
 		else
 			ft_putchar_fd(str[s_flags.index], 1, &s_flags);
-		s_flags.index++;
+			s_flags.index++;
 	}
 	va_end(args);
 	return (s_flags.size);
