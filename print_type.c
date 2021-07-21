@@ -11,7 +11,7 @@ void	ft_parse_args(char *str, t_flags *s_flags, va_list args)
 	else if (str[s_flags->index] == 'u')
 		ft_print_unsig(args, s_flags);
 	else if (str[s_flags->index] == 'p')
-		ft_print_pointer(args, s_flags);
+		ft_print_pointer(args, s_flags, str);
 	else if ((str[s_flags->index] == 'x') || (str[s_flags->index] == 'X'))
 		ft_print_hex(str, s_flags, args);
 	else if (str[s_flags->index] == '%')

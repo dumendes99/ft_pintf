@@ -3,36 +3,32 @@
 void	ft_print_hex(char *str, t_flags *s_flags, va_list args)
 {
 	unsigned int	num;
-	char			*lowerbase;
-	char			*upperbase;
 	char			*str_num;
 	int				rest_size;
 
-	lowerbase = "0123456789abcdef";
-	upperbase = "0123456789ABCDEF";
 	num = va_arg(args, unsigned int);
-	if (str[s_flags->index] == 'x')
+	str_num = ft_itoa_hex(num, s_flags, str);
+	rest_size = s_flags->width - ft_strlen(str_num);
+	if ((s_flags->minus) && (rest_size > 0))
 	{
-		str_num = ft_itoa_hex(num, lowerbase);
 		ft_putstr(str_num, 1, s_flags);
+		print_width(&rest_size, s_flags);
 	}
 	else
 	{
-		str_num = ft_itoa_hex(num, upperbase);
+		print_width(&rest_size, s_flags);
 		ft_putstr(str_num, 1, s_flags);
 	}
 }
 
-void	ft_print_pointer(va_list args, t_flags *s_flags)
+void	ft_print_pointer(va_list args, t_flags *s_flags, char *str)
 {
 	unsigned long long int	num;
-	char					*lowerbase;
 	int						rest_size;
 	char					*str_num;
 
-	lowerbase = "0123456789abcdef";
 	num = va_arg(args, unsigned long long int);
-	str_num = ft_itoa_hex(num, lowerbase);
+	str_num = ft_itoa_hex(num, s_flags, str);
 	rest_size = (s_flags->width - (ft_strlen(str_num) + 2));
 	if ((s_flags->minus) && (rest_size > 0))
 	{

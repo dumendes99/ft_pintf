@@ -3,12 +3,16 @@ NAME = libftprintf.a
 CFLAGS = -Wall -Werror -Wextra 
 CC = clang
 
-SRC =	./src/print_base.c \
-		./src/print_type.c \
-		./src/printf_utils_num.c \
-		./src/printf_utils.c \
-		./src/init_struct.c \
-		ft_printf.c 
+SRC =	check_flags.c \
+		ft_printf.c \
+		init_struct.c \
+		print_num.c \
+		print_str.c \
+		print_type.c \
+		print_width.c \
+		printf_utils_num.c \
+		printf_utils.c \
+		utils_base.c \
 
 OBJ =	$(SRC:.c=.o)
 

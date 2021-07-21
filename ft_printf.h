@@ -30,7 +30,7 @@ void	ft_print_num(va_list args, t_flags *s_flags);
 void	ft_print_char(va_list args, t_flags *s_flags);
 void	ft_print_str(va_list args, t_flags *s_flags);
 void	ft_print_unsig(va_list args, t_flags *s_flags);
-void	ft_print_pointer(va_list args, t_flags *s_flags);
+void	ft_print_pointer(va_list args, t_flags *s_flags, char *str);
 void	ft_print_hex(char *str, t_flags *s_flags, va_list args);
 char	*ft_utoa(unsigned int num);
 int		ft_check_unsig(unsigned int num);
@@ -40,7 +40,7 @@ void	init_struct(t_flags *s_flags);
 int		ft_atoi(char *str, t_flags *s_flags);
 void	ft_result_flags(t_flags *s_flags);
 void	ft_putstr(char *str, int fd, t_flags *s_flags);
-char	*ft_itoa_hex(unsigned long long num, char *base);
+char	*ft_itoa_hex(unsigned long long num, t_flags *s_flags, char *str);
 int		ft_checklen_base(unsigned long long num);
 
 #endif
