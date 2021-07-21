@@ -40,5 +40,7 @@ void	init_struct(t_flags *s_flags);
 int		ft_atoi(char *str, t_flags *s_flags);
 void	ft_result_flags(t_flags *s_flags);
 void	ft_putstr(char *str, int fd, t_flags *s_flags);
+char	*ft_itoa_hex(unsigned long long num, char *base);
+int		ft_checklen_base(unsigned long long num);
 
 #endif
