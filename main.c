@@ -13,6 +13,9 @@ int main(void)
 	printf(" %d\n", ft_printf("%-010d| meu ", n));
 	printf(" %d\n\n", printf("%-010d| std " , n));
  
+ 	printf(" %d\n", ft_printf("%010d| meu ", n));
+	printf(" %d\n\n", printf("%010d| std " , n));
+
 	printf(" %d\n", ft_printf("%010d| meu ", n));
 	printf(" %d\n\n", printf("%010d| std " , n));
  
