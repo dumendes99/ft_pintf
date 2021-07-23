@@ -2,26 +2,30 @@
 
 void	ft_check_sign(char *str, t_flags *s_flags)
 {
-	if (str[s_flags->index] == '-')
+	while (str[s_flags->index] < '1')
 	{
-		s_flags->minus = 1;
-		s_flags->index++;
+		if (str[s_flags->index] == '-')
+		{	
+			s_flags->minus = 1;
+			s_flags->index++;
+		}
+		if (str[s_flags->index] == '0')
+		{
+			s_flags->zero = 1;
+			s_flags->index++;
+		}
+		if (str[s_flags->index] == '+')
+		{
+			s_flags->plus = 1;
+			s_flags->index++;
+		}
+		if (str[s_flags->index] == ' ')
+		{
+			s_flags->space = 1;
+			s_flags->index++;
+		}
 	}
-	if (str[s_flags->index] == '0')
-	{
-		s_flags->zero = 1;
-		s_flags->index++;
-	}
-	if (str[s_flags->index] == '+')
-	{
-		s_flags->plus = 1;
-		s_flags->index++;
-	}
-	if (str[s_flags->index] == ' ')
-	{
-		s_flags->space = 1;
-		s_flags->index++;
-	}
+	
 	ft_result_flags(s_flags);
 }
 

@@ -2,7 +2,6 @@
 
 int main(void)
 {
-	int n = -113;
 	int hex = 15643;
 	char c = 'e';
 	char *str = "eduardo";
@@ -10,20 +9,26 @@ int main(void)
 	printf(" %d\n", ft_printf("qualquer coisa| meu "));
 	printf(" %d\n\n", printf("qualquer coisa| std "));
  
-	printf(" %d\n", ft_printf("%-010d| meu ", n));
-	printf(" %d\n\n", printf("%-010d| std " , n));
+	printf(" %d\n", ft_printf("%-010d| meu ", -123));
+	printf(" %d\n\n", printf("%-010d| std " , -123));
  
- 	printf(" %d\n", ft_printf("%010d| meu ", n));
-	printf(" %d\n\n", printf("%010d| std " , n));
+ 	printf(" %d\n", ft_printf("%+-010d| meu ", 123));
+	printf(" %d\n\n", printf("%+-010d| std " , 123));
 
-	printf(" %d\n", ft_printf("%010d| meu ", n));
-	printf(" %d\n\n", printf("%010d| std " , n));
+	printf(" %d\n", ft_printf("%+10d| meu ", 123));
+	printf(" %d\n\n", printf("%+10d| std " , 123));
+
+ 	printf(" %d\n", ft_printf("%+010d| meu ", 123));
+	printf(" %d\n\n", printf("%+010d| std " , 123));
+
+	printf(" %d\n", ft_printf("%010d| meu ", 123));
+	printf(" %d\n\n", printf("%010d| std " , 123));
  
-	printf(" %d\n", ft_printf("%10d| meu ", n));
-	printf(" %d\n\n", printf("%10d| std " , n));
+	printf(" %d\n", ft_printf("%10d| meu ", 333));
+	printf(" %d\n\n", printf("%10d| std " , 333));
  
-	printf(" %d\n", ft_printf("%d| meu ", n));
-	printf(" %d\n\n", printf("%d| std " , n));
+	printf(" %d\n", ft_printf("%d| meu ", 123));
+	printf(" %d\n\n", printf("%d| std " , 123));
  
 	printf(" %d\n", ft_printf("%c| meu ", c));
 	printf(" %d\n\n", printf("%c| std ", c));
@@ -31,11 +36,11 @@ int main(void)
 	printf(" %d\n", ft_printf("%s| meu ", str));
 	printf(" %d\n\n", printf("%s| std ", str));
  
-	printf(" %d\n", ft_printf("%015i| meu ", n));
-	printf(" %d\n\n", printf("%015i| std ", n));
+	printf(" %d\n", ft_printf("%015i| meu ", 123));
+	printf(" %d\n\n", printf("%015i| std ", 123));
  
-	printf(" %d\n", ft_printf("%015u| meu ", n));
-	printf(" %d\n\n", printf("%015u| std ", n));
+	printf(" %d\n", ft_printf("%015u| meu ", 123));
+	printf(" %d\n\n", printf("%015u| std ", 123));
  
 	printf(" %d\n", ft_printf("%020p| meu ", &str));
 	printf(" %d\n\n", printf("%020p| std ", &str));

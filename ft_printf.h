@@ -42,5 +42,7 @@ void	ft_result_flags(t_flags *s_flags);
 void	ft_putstr(char *str, int fd, t_flags *s_flags);
 char	*ft_itoa_hex(unsigned long long num, t_flags *s_flags, char *str);
 int		ft_checklen_base(unsigned long long num);
+void	print_width_num(int *rest_size, t_flags *s_flags, int num);
+void	print_flags_num(int *rest_size, char *str_num, int num, t_flags *s_flags);
 
 #endif

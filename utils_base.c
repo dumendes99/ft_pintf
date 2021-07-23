@@ -2,7 +2,7 @@
 
 int	ft_checklen_base(unsigned long long num)
 {
-	int size;
+	int	size;
 
 	size = 1;
 	while (num >= 16)
@@ -22,7 +22,6 @@ char	*ft_itoa_hex(unsigned long long num, t_flags *s_flags, char *str)
 
 	lowerbase = "0123456789abcdef";
 	upperbase = "0123456789ABCDEF";
-
 	len = ft_checklen_base(num);
 	str_num = (char *)malloc(sizeof(char) * len + 1);
 	str_num[len] = '\0';
@@ -39,4 +38,30 @@ char	*ft_itoa_hex(unsigned long long num, t_flags *s_flags, char *str)
 			num = num / 16;
 		}
 	return (str_num);
+}
+
+void	print_flags_num(int *r_s, char *str_num, int num, t_flags *s_flags)
+{
+	int	i;
+
+	i = 0;
+	if ((num < 0) && (s_flags->zero == 1))
+	{
+		ft_putchar_fd('-', 1, s_flags);
+		i++;
+	}
+	if ((s_flags->minus) && (r_s > 0))
+	{
+		if (s_flags->plus)
+		{
+			ft_putchar_fd('+', 1, s_flags);
+		}
+		ft_putstr(&str_num[i], 1, s_flags);
+		print_width_num(r_s, s_flags, num);
+	}
+	else
+	{
+		print_width_num(r_s, s_flags, num);
+		ft_putstr(&str_num[i], 1, s_flags);
+	}
 }

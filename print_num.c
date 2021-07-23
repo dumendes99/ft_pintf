@@ -85,20 +85,6 @@ void	ft_print_num(va_list args, t_flags *s_flags)
 	num = va_arg(args, int);
 	str_num = ft_itoa(num);
 	rest_size = (s_flags->width - ft_strlen(str_num));
-	if ((num < 0) && (s_flags->zero == 1))
-	{
-		ft_putchar_fd('-', 1, s_flags);
-		i++;
-	}
-	if ((s_flags->minus) && (rest_size > 0))
-	{
-		ft_putstr(&str_num[i], 1, s_flags);
-		print_width(&rest_size, s_flags);
-	}
-	else
-	{
-		print_width(&rest_size, s_flags);
-		ft_putstr(&str_num[i], 1, s_flags);
-	}
+	print_flags_num(&rest_size, str_num, num, s_flags);
 	free(str_num);
 }

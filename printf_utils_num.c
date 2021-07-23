@@ -30,7 +30,7 @@ int	ft_checklen(int num)
 {
 	int				i;
 
-	i = 1;
+	i = 0;
 	while (num && ++i)
 		num = num / 10;
 	return (i);
@@ -60,14 +60,15 @@ char	*ft_itoa(int num)
 	int				neg;
 
 	len = ft_checklen(num);
-	str = (char *)malloc(sizeof(char) * len + 1);
 	neg = 0;
 	if (num < 0)
 	{
 		num *= -1;
 		n = num;
 		neg = 1;
+		len++;
 	}
+	str = (char *)malloc(sizeof(char) * len + 1);
 	n = num;
 	str[len] = '\0';
 	while (len--)
