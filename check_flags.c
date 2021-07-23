@@ -24,9 +24,9 @@ void	ft_check_sign(char *str, t_flags *s_flags)
 			s_flags->space = 1;
 			s_flags->index++;
 		}
+		check_precision(str, s_flags);
+		check_hashtag(str, s_flags);
 	}
-	
-	ft_result_flags(s_flags);
 }
 
 void	ft_result_flags(t_flags *s_flags)

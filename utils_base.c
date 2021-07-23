@@ -17,26 +17,20 @@ char	*ft_itoa_hex(unsigned long long num, t_flags *s_flags, char *str)
 {
 	char	*str_num;
 	int		len;
-	char	*lowerbase;
-	char	*upperbase;
 
-	lowerbase = "0123456789abcdef";
-	upperbase = "0123456789ABCDEF";
 	len = ft_checklen_base(num);
 	str_num = (char *)malloc(sizeof(char) * len + 1);
 	str_num[len] = '\0';
-	if (str[s_flags->index] == 'X')
-		while (len--)
-		{
-			str_num[len] = upperbase[num % 16];
-			num = num / 16;
-		}
-	else
-		while (len--)
-		{
-			str_num[len] = lowerbase[num % 16];
-			num = num / 16;
-		}
+	while (len--)
+	{
+		if (str[s_flags->index] == 'X' && num % 16 >= 10)
+			str_num[len] = (num % 16) - 10 + 'A';
+		else if (num % 16 >= 10)
+			str_num[len] = (num % 16) - 10 + 'a';
+		else
+			str_num[len] = (num % 16) + '0';
+		num /= 16;
+	}
 	return (str_num);
 }
 
@@ -53,9 +47,7 @@ void	print_flags_num(int *r_s, char *str_num, int num, t_flags *s_flags)
 	if ((s_flags->minus) && (r_s > 0))
 	{
 		if (s_flags->plus)
-		{
 			ft_putchar_fd('+', 1, s_flags);
-		}
 		ft_putstr(&str_num[i], 1, s_flags);
 		print_width_num(r_s, s_flags, num);
 	}
@@ -63,5 +55,37 @@ void	print_flags_num(int *r_s, char *str_num, int num, t_flags *s_flags)
 	{
 		print_width_num(r_s, s_flags, num);
 		ft_putstr(&str_num[i], 1, s_flags);
+	}
+}
+
+void	printpointer_flags(int *rest_size, char *str_num, t_flags *s_flags)
+{
+	if ((s_flags->minus) && (rest_size > 0))
+	{
+		ft_putstr("0x", 1, s_flags);
+		ft_putstr(str_num, 1, s_flags);
+		print_width(rest_size, s_flags);
+	}
+	else if ((s_flags->zero) && (rest_size > 0))
+	{
+		ft_putstr("0x", 1, s_flags);
+		print_width(rest_size, s_flags);
+		ft_putstr(str_num, 1, s_flags);
+	}
+	else
+	{
+		print_width(rest_size, s_flags);
+		ft_putstr("0x", 1, s_flags);
+		ft_putstr(str_num, 1, s_flags);
+	}
+}
+
+void print_hashtag(int *rest_size, t_flags *s_flags)
+{
+	if (s_flags->hashtag)
+	{
+		*rest_size = *rest_size - 2;
+		if (s_flags->zero || s_flags->minus)
+			ft_putstr("0x", 1, s_flags);
 	}
 }

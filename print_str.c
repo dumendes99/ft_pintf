@@ -12,11 +12,11 @@ void	ft_print_char(va_list args, t_flags *s_flags)
 void	ft_print_str(va_list args, t_flags *s_flags)
 {
 	char	*str;
+	int		rest_size;
 
 	str = va_arg(args, char *);
-	while (*str)
-	{
-		ft_putchar_fd(*str, 1, s_flags);
-		str++;
-	}
+	rest_size = s_flags->width - ft_strlen(str);
+	if (rest_size > 0)
+		print_width(&rest_size, s_flags);
+	ft_putstr(str, 1, s_flags);
 }

@@ -11,7 +11,9 @@ typedef struct s_flags
 	int	minus;
 	int	zero;
 	int	width;
+	int hashtag;
 	int	dot;
+	int	precision;
 	int	index;
 	int plus;
 	int	space;
@@ -44,5 +46,9 @@ char	*ft_itoa_hex(unsigned long long num, t_flags *s_flags, char *str);
 int		ft_checklen_base(unsigned long long num);
 void	print_width_num(int *rest_size, t_flags *s_flags, int num);
 void	print_flags_num(int *rest_size, char *str_num, int num, t_flags *s_flags);
+void	printpointer_flags(int *rest_size, char *str_num, t_flags *s_flags);
+void	check_precision(char *str, t_flags *s_flags);
+void	check_hashtag(char *str, t_flags *s_flags);
+void print_hashtag(int *rest_size, t_flags *s_flags);
 
 #endif

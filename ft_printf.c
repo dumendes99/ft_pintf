@@ -15,6 +15,7 @@ int	ft_printf(const char *str, ...)
 			//check flags before calling the converter;
 			ft_check_sign((char *)str, &s_flags);
 			ft_check_width((char *)str, &s_flags, args);
+			ft_result_flags(&s_flags);
 			ft_parse_args((char *)str, &s_flags, args);
 		}
 		else
