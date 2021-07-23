@@ -19,6 +19,7 @@ void	ft_print_hex(char *str, t_flags *s_flags, va_list args)
 		print_width(&rest_size, s_flags);
 		ft_putstr(str_num, 1, s_flags);
 	}
+	free(str_num);
 }
 
 void	ft_print_pointer(va_list args, t_flags *s_flags, char *str)
@@ -48,6 +49,7 @@ void	ft_print_pointer(va_list args, t_flags *s_flags, char *str)
 		ft_putstr("0x", 1, s_flags);
 		ft_putstr(str_num, 1, s_flags);
 	}
+	free(str_num);
 }
 
 void	ft_print_unsig(va_list args, t_flags *s_flags)

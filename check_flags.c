@@ -2,7 +2,7 @@
 
 void	ft_check_sign(char *str, t_flags *s_flags)
 {
-	while (str[s_flags->index] < '1')
+	while (str[s_flags->index] < '1' && (str[s_flags->index] != '%'))
 	{
 		if (str[s_flags->index] == '-')
 		{	
