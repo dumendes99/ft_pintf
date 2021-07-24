@@ -48,7 +48,7 @@ void	print_width_num(int *rest_size, t_flags *s_flags, int num);
 void	print_flags_num(int *rest_size, char *str_num, int num, t_flags *s_flags);
 void	printpointer_flags(int *rest_size, char *str_num, t_flags *s_flags);
 void	check_hashtag(char *str, t_flags *s_flags);
-void	print_hashtag(char *str, int *rest_size, t_flags *s_flags);
+void	print_hashtag(char *str, t_flags *s_flags, int num);
 void	ft_reset_flags(t_flags *s_flags);
 
 #endif

@@ -2,6 +2,8 @@
 
 void	print_width(int *rest_size, t_flags *s_flags)
 {
+	if (s_flags->hashtag)
+		*rest_size = *rest_size - 2;
 	if ((s_flags->zero) && (*rest_size > 0))
 	{
 		while (*rest_size > 0)

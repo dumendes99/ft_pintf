@@ -9,18 +9,30 @@ void	ft_print_hex(char *str, t_flags *s_flags, va_list args)
 	num = va_arg(args, unsigned int);
 	str_num = ft_itoa_hex(num, s_flags, str);
 	rest_size = s_flags->width - ft_strlen(str_num);
-	if (num > 0)
-		print_hashtag(str, &rest_size, s_flags);
-	if ((s_flags->minus) && (rest_size > 0))
+	if (rest_size > 0 && (s_flags->zero || s_flags->minus))
 	{
-		ft_putstr(str_num, 1, s_flags);
+		print_hashtag(str, s_flags, num);
 		print_width(&rest_size, s_flags);
+		ft_putstr(str_num, 1, s_flags);
 	}
 	else
 	{
 		print_width(&rest_size, s_flags);
+		print_hashtag(str, s_flags, num);
 		ft_putstr(str_num, 1, s_flags);
 	}
+	// if (num > 0)
+	// 	print_hashtag(str, &rest_size, s_flags);
+	// if ((s_flags->minus) && (rest_size > 0))
+	// {
+	// 	ft_putstr(str_num, 1, s_flags);
+	// 	print_width(&rest_size, s_flags);
+	// }
+	// else
+	// {
+	// 	print_width(&rest_size, s_flags);
+	// 	ft_putstr(str_num, 1, s_flags);
+	// }
 	free(str_num);
 }
 

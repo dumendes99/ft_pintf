@@ -17,13 +17,13 @@ void	ft_print_str(va_list args, t_flags *s_flags)
 	str = va_arg(args, char *);
 	if (str == NULL)
 	{
+		rest_size = s_flags->width - ft_strlen("(null)");
+		print_width(&rest_size, s_flags);
 		ft_putstr("(null)", 1, s_flags);
 		return ;
 	}
 	rest_size = s_flags->width - ft_strlen(str);
 	if (rest_size > 0)
 		print_width(&rest_size, s_flags);
-	if (str == NULL)
-		ft_putstr("(NULL)", 1, s_flags);
 	ft_putstr(str, 1, s_flags);
 }
