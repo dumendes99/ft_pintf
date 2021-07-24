@@ -12,8 +12,8 @@ int	ft_printf(const char *str, ...)
 		if (str[s_flags.index] == '%')
 		{
 			s_flags.index++;
-			//check flags before calling the converter;
-			ft_check_sign((char *)str, &s_flags);
+			// check flags before calling the converter;
+			ft_check_sign((char *)str, &s_flags, args);
 			ft_check_width((char *)str, &s_flags, args);
 			ft_result_flags(&s_flags);
 			ft_parse_args((char *)str, &s_flags, args);

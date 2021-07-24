@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void	ft_check_sign(char *str, t_flags *s_flags)
+void	ft_check_sign(char *str, t_flags *s_flags, va_list args)
 {
 	while (str[s_flags->index] < '1' && (str[s_flags->index] != '%'))
 	{
@@ -24,7 +24,7 @@ void	ft_check_sign(char *str, t_flags *s_flags)
 			s_flags->space = 1;
 			s_flags->index++;
 		}
-		check_precision(str, s_flags);
+		check_precision(str, s_flags, args);
 		check_hashtag(str, s_flags);
 	}
 }

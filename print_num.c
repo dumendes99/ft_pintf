@@ -78,7 +78,8 @@ void	ft_print_num(va_list args, t_flags *s_flags)
 		ft_putchar_fd(' ', 1, s_flags);
 		rest_size--;
 	}
-	
+	//função que valida e conta a precisão e width.
 	print_flags_num(&rest_size, str_num, num, s_flags);
 	free(str_num);
 }
+		 

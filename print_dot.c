@@ -1,1 +1,0 @@
-void	print_dot(t_flags *s_flags, )

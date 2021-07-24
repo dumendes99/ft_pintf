@@ -4,6 +4,7 @@ CFLAGS = -Wall -Werror -Wextra
 CC = clang
 
 SRC =	check_flags.c \
+		check_precision.c \
 		ft_printf.c \
 		init_struct.c \
 		print_num.c \
@@ -21,7 +22,9 @@ REMOVE = rm -rf
 all: $(NAME)
 
 $(NAME): $(OBJ) 
-	ar -r $(NAME) $(ONJ)
+	ar -rcs $(NAME) $(OBJ)
+
+bonus: all
 
 .c.o:
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
