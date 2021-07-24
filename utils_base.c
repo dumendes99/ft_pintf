@@ -79,3 +79,25 @@ void	printpointer_flags(int *rest_size, char *str_num, t_flags *s_flags)
 		ft_putstr(str_num, 1, s_flags);
 	}
 }
+
+void	print_flags_hex(char *str, char *str_num, int *r_s, t_flags *s_flags)
+{	
+	if (s_flags->zero)
+	{
+		print_hashtag(str, s_flags);
+		print_width(r_s, s_flags);
+		ft_putstr(str_num, 1, s_flags);
+	}
+	else if (s_flags->minus)
+	{
+		print_hashtag(str, s_flags);
+		ft_putstr(str_num, 1, s_flags);
+		print_width(r_s, s_flags);
+	}
+	else
+	{
+		print_width(r_s, s_flags);
+		print_hashtag(str, s_flags);
+		ft_putstr(str_num, 1, s_flags);
+	}
+}

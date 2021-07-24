@@ -32,7 +32,7 @@ int	ft_checklen(int num)
 
 	i = 0;
 	if (num == 0)
-		return 1;
+		return (1);
 	while (num && ++i)
 		num = num / 10;
 	return (i);

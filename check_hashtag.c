@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void check_hashtag(char *str, t_flags *s_flags)
+void	check_hashtag(char *str, t_flags *s_flags)
 {
 	if (str[s_flags->index] == '#')
 	{
@@ -9,9 +9,9 @@ void check_hashtag(char *str, t_flags *s_flags)
 	}
 }
 
-void print_hashtag(char *str, t_flags *s_flags, int num)
+void	print_hashtag(char *str, t_flags *s_flags)
 {
-	if (s_flags->hashtag && num > 0)
+	if (s_flags->hashtag && s_flags->num != 0)
 	{
 		if (str[s_flags->index] == 'x')
 			ft_putstr("0x", 1, s_flags);
