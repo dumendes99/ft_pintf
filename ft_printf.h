@@ -21,7 +21,7 @@ typedef struct s_flags
 }	t_flags;
 
 int		ft_printf(const char *str, ...);
-void	ft_check_sign(char *str, t_flags *s_flags, va_list args);
+void	ft_check_sign(char *str, t_flags *s_flags);
 void	ft_check_width(char *str, t_flags *s_flags, va_list args);
 void	ft_parse_args(char *str, t_flags *s_flags, va_list args);
 int		ft_strlen(char *str);
@@ -47,8 +47,8 @@ int		ft_checklen_base(unsigned long long num);
 void	print_width_num(int *rest_size, t_flags *s_flags, int num);
 void	print_flags_num(int *rest_size, char *str_num, int num, t_flags *s_flags);
 void	printpointer_flags(int *rest_size, char *str_num, t_flags *s_flags);
-void	check_precision(char *str, t_flags *s_flags, va_list args);
 void	check_hashtag(char *str, t_flags *s_flags);
-void	print_hashtag(int *rest_size, t_flags *s_flags);
+void	print_hashtag(char *str, int *rest_size, t_flags *s_flags);
+void	ft_reset_flags(t_flags *s_flags);
 
 #endif

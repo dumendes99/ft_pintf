@@ -4,7 +4,7 @@ CFLAGS = -Wall -Werror -Wextra
 CC = clang
 
 SRC =	check_flags.c \
-		check_precision.c \
+		check_hashtag.c \
 		ft_printf.c \
 		init_struct.c \
 		print_num.c \

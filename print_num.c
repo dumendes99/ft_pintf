@@ -9,7 +9,8 @@ void	ft_print_hex(char *str, t_flags *s_flags, va_list args)
 	num = va_arg(args, unsigned int);
 	str_num = ft_itoa_hex(num, s_flags, str);
 	rest_size = s_flags->width - ft_strlen(str_num);
-	print_hashtag(&rest_size, s_flags);
+	if (num > 0)
+		print_hashtag(str, &rest_size, s_flags);
 	if ((s_flags->minus) && (rest_size > 0))
 	{
 		ft_putstr(str_num, 1, s_flags);
@@ -18,8 +19,6 @@ void	ft_print_hex(char *str, t_flags *s_flags, va_list args)
 	else
 	{
 		print_width(&rest_size, s_flags);
-		if (s_flags->hashtag && !s_flags->zero)
-			ft_putstr("0x", 1, s_flags);
 		ft_putstr(str_num, 1, s_flags);
 	}
 	free(str_num);
@@ -73,12 +72,11 @@ void	ft_print_num(va_list args, t_flags *s_flags)
 	num = va_arg(args, int);
 	str_num = ft_itoa(num);
 	rest_size = (s_flags->width - ft_strlen(str_num));
-	if (s_flags->space == 1)
+	if ((s_flags->space) && num >= 0)
 	{
 		ft_putchar_fd(' ', 1, s_flags);
 		rest_size--;
 	}
-	//função que valida e conta a precisão e width.
 	print_flags_num(&rest_size, str_num, num, s_flags);
 	free(str_num);
 }

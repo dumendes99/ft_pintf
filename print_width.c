@@ -44,7 +44,7 @@ void	print_width_num(int *rest_size, t_flags *s_flags, int num)
 			ft_putchar_fd(' ', 1, s_flags);
 			*rest_size = *rest_size - 1;
 		}
-		if ((s_flags->plus) && (num > 0) && (s_flags->minus == 0))
+		if ((s_flags->plus) && (num >= 0) && (s_flags->minus == 0))
 			ft_putchar_fd('+', 1, s_flags);
 	}
 }

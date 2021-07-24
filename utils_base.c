@@ -79,13 +79,3 @@ void	printpointer_flags(int *rest_size, char *str_num, t_flags *s_flags)
 		ft_putstr(str_num, 1, s_flags);
 	}
 }
-
-void print_hashtag(int *rest_size, t_flags *s_flags)
-{
-	if (s_flags->hashtag)
-	{
-		*rest_size = *rest_size - 2;
-		if (s_flags->zero || s_flags->minus)
-			ft_putstr("0x", 1, s_flags);
-	}
-}

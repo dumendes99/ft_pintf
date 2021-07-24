@@ -31,6 +31,8 @@ int	ft_checklen(int num)
 	int				i;
 
 	i = 0;
+	if (num == 0)
+		return 1;
 	while (num && ++i)
 		num = num / 10;
 	return (i);
